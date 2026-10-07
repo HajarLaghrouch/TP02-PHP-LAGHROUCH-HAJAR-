@@ -1,8 +1,7 @@
 # TP02-PHP-LAGHROUCH-HAJAR-
+# TP 02 — Programmation Web 2 — PHP
 
-## TP 02 — Programmation Web 2 — PHP
-
-### Informations
+## Informations
 
 * **Nom :** LAGHROUCH
 * **Prénom :** HAJAR
@@ -12,7 +11,7 @@
 
 Ce dépôt contient les solutions des exercices du TP 02 de PHP.
 
-Les exercices permettent de pratiquer les bases de la programmation PHP : variables, constantes, types, conditions, boucles, `switch`, formulaires GET et POST.
+Les exercices permettent de pratiquer les bases de la programmation PHP : variables, constantes, types, conditions, boucles, `switch`, tableaux associatifs et formulaires GET et POST.
 
 ## Liste des exercices
 
@@ -23,8 +22,8 @@ Les exercices permettent de pratiquer les bases de la programmation PHP : variab
 * **Exercice 5 :** Conditions `if`, `elseif`, `else`
 * **Exercice 6 :** `switch`, `case`, `break`, `default` et `date()`
 * **Exercice 7 :** Boucles `for` et boucles imbriquées
-* **Exercice 8 :** À compléter
-* **Exercice 9 :** À compléter
+* **Exercice 8 :** Boucles `while`, `do-while`, `continue` et `break`
+* **Exercice 9 :** Tableau associatif et traitement des notes
 * **Exercice 10 :** Formulaires GET et POST
 
 ## Instructions d'exécution
@@ -42,6 +41,8 @@ http://localhost/TP02-PHP-LAGHROUCH-HAJAR-/ex01.php
 
 Pour tester un autre exercice, remplacer `ex01.php` par le nom du fichier correspondant.
 
+---
+
 ## Exercice 1
 
 ### Notions utilisées
@@ -50,6 +51,8 @@ Pour tester un autre exercice, remplacer `ex01.php` par le nom du fichier corres
 * HTML est interprété par le navigateur.
 * `echo` permet d'afficher du texte.
 * Les commentaires permettent d'expliquer le code.
+
+---
 
 ## Exercice 2
 
@@ -74,6 +77,8 @@ Donc `$note` et `$Note` sont deux variables différentes.
 
 * `$a!` : contient un caractère spécial.
 * `$1a` : commence par un chiffre.
+
+---
 
 ## Exercice 3
 
@@ -111,6 +116,8 @@ $totalTTC = $totalTTC + 15;
 ### Fonction `defined()`
 
 `defined()` permet de vérifier si une constante existe.
+
+---
 
 ## Exercice 4
 
@@ -150,6 +157,8 @@ Donc :
 * `(bool) "PHP"` → `true`
 * `(bool) []` → `false`
 
+---
+
 ## Exercice 5
 
 ### Conditions utilisées
@@ -173,6 +182,8 @@ L'exercice utilise :
 |      14 | Bien          |
 |      16 | Très bien     |
 |      21 | Note invalide |
+
+---
 
 ## Exercice 6
 
@@ -204,9 +215,11 @@ $numeroMois = (int) date("m");
 
 permet d'obtenir automatiquement le numéro du mois courant du serveur.
 
-Le résultat obtenu actuellement est :
+Le résultat obtenu lors du test est :
 
 **Octobre**
+
+---
 
 ## Exercice 7
 
@@ -245,6 +258,98 @@ Deux boucles `for` imbriquées permettent d'afficher une pyramide de six lignes 
 ******
 ```
 
-## Remarque
+---
 
-Les exercices restants seront ajoutés progressivement dans le dépôt.
+## Exercice 8
+
+### Notions utilisées
+
+Le programme permet de :
+
+* afficher les nombres pairs de 0 à 20 avec `while` ;
+* mettre le nombre 10 en gras ;
+* comparer `while` et `do-while` ;
+* utiliser `continue` pour ignorer les multiples de 3 ;
+* utiliser `break` pour arrêter la boucle à partir de 16.
+
+### Résultats
+
+* `while` avec compteur initialisé à 5 : **0 exécution**
+* `do-while` avec compteur initialisé à 5 : **1 exécution**
+* Les multiples de 3 sont ignorés.
+* La boucle s'arrête avant d'afficher 16.
+
+---
+
+## Exercice 9
+
+### Tableau associatif
+
+Le programme utilise un tableau associatif contenant les noms des étudiants et leurs notes.
+
+Il permet de :
+
+* afficher les étudiants et leurs notes dans un tableau HTML ;
+* afficher « Validé » ou « Non validé » selon la note ;
+* calculer la somme des notes ;
+* calculer la moyenne de la classe ;
+* compter les étudiants validés ;
+* déterminer la meilleure note et l'étudiant correspondant.
+
+### Résultats
+
+* Somme des notes : **60**
+* Moyenne de la classe : **12**
+* Nombre d'étudiants validés : **4**
+* Meilleure note : **16**
+* Meilleur étudiant : **Sara**
+
+---
+
+## Exercice 10
+
+### Formulaires GET et POST
+
+#### Partie A — GET
+
+Fichiers :
+
+* `ex10_get.html`
+* `ex10_get.php`
+
+Le formulaire contient :
+
+* Nom
+* Prénom
+* Groupe : G1, G2, G3 ou G4
+
+Les données sont envoyées avec la méthode `GET` et récupérées avec `$_GET`.
+
+Avec GET, les valeurs saisies apparaissent dans l'URL.
+
+#### Partie B — POST
+
+Fichiers :
+
+* `ex10_post.html`
+* `ex10_post.php`
+
+Le même formulaire est envoyé avec la méthode `POST`.
+
+Les données sont récupérées avec `$_POST`.
+
+Avec POST, les valeurs saisies n'apparaissent pas dans l'URL.
+
+#### Vérifications
+
+Le programme vérifie :
+
+* la présence des champs avec `isset()` ;
+* les champs vides avec `trim()` ;
+* la sécurité de l'affichage avec `htmlspecialchars()`.
+
+Les pages de traitement peuvent également être ouvertes directement sans provoquer d'erreur `Undefined array key`.
+
+### Résultat
+
+Les formulaires GET et POST ont été testés avec succès avec des données complètes et incomplètes.

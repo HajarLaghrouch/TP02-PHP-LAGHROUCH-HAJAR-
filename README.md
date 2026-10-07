@@ -189,3 +189,29 @@ Les valeurs limites sont correctement traitées :
 * `21` est invalide car supérieur à 20.
 
 Une note invalide ne reçoit aucune mention.
+## Exercice 6
+
+### Notions utilisées
+
+- `switch` : permet de choisir un cas selon la valeur d'une variable.
+- `case` : représente une valeur possible.
+- `break` : arrête l'exécution du `switch`.
+- `default` : s'exécute lorsqu'aucun `case` ne correspond.
+- `date("m")` : récupère le numéro du mois courant.
+- `(int)` : convertit une valeur en entier.
+
+### Valeurs testées
+
+| Numéro | Résultat |
+|---:|---|
+| 1 | Janvier |
+| 3 | Mars |
+| 12 | Décembre |
+| 15 | Numéro de mois invalide |
+
+### Mois courant
+
+La valeur :
+
+```php
+$numeroMois = (int) date("m");
